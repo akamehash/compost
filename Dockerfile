@@ -1,0 +1,1 @@
+FROM akameshimory/busybox:latest
