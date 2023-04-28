@@ -1,0 +1,8 @@
+version: '1'
+services:
+  db:
+     image: akameshimori/busybox:latest
+     container_name: mysql_db
+     restart: always
+     environment:
+        - MYSQL_ROOT_PASSWORD="secret"
