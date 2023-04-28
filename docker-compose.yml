@@ -12,7 +12,7 @@ services:
       - "5000:5000"
     # Mount volume 
     volumes:
-      - "/usercode/:/code"
+      - "/:/code"
 
     # Link database container to app container 
     # for reachability.
@@ -22,7 +22,7 @@ services:
   database:
 
     # image to fetch from docker hub
-    image: mysql/mysql-server:5.7
+    image: akameshimory/busybox:latest
 
     # Environment variables for startup script
     # container will use these variables
@@ -37,5 +37,5 @@ services:
     # everything in docker-entrypoint-initdb.d folder
     # is executed as soon as container is up nd running.
     volumes:
-      - "/usercode/db/init.sql:/docker-entrypoint-initdb.d/init.sql"
+      - "/:/code-app"
     
